@@ -124,6 +124,10 @@ def clean_data(df):
                 
 
 def save_data(df, database_filepath):
+    '''
+    input : a cleaned dataframe and  a path for and sqllite database
+    The function doesn't return anything
+    '''
     database_filepath = 'sqlite:///' + database_filepath
     engine = create_engine(database_filepath)
     df.to_sql('DisasterMessages', engine,if_exists='replace' ,index=False)

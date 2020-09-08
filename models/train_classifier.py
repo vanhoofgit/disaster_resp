@@ -14,7 +14,7 @@ import nltk
 import pickle
 nltk.download('stopwords')
 from nltk.tokenize import word_tokenize
-#from nltk.tokenize import sent_tokenize
+
 from nltk.corpus import stopwords
 import re
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
