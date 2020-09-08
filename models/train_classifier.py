@@ -85,7 +85,7 @@ def build_model( X,Y):
               'clf__estimator__max_depth': [2,None],
               'clf__estimator__n_estimators':[10,100,]}
 
-    limited_parameters = {'clf__estimator__n_estimators':[10,100],
+    limited_parameters = {'clf__estimator__n_estimators':[100],
                      'vect__ngram_range': [(1,1)]}
 
     cv = GridSearchCV(estimator=pipeline, param_grid=limited_parameters, scoring = 'f1_micro', cv=5, n_jobs = 1, verbose = 10)     
