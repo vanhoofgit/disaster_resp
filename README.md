@@ -1,7 +1,7 @@
 # DesasterResponse
 Classifier for desaster messages. 
 A data science and data visualization via html project based on Figuare Eight data.
-The classifier can be tested :https://desaster_message.herokuapp.com/data1. 
+
 
 **1)Project Motivation**</br>
 The aim of the project was to build a classifier that would classify a message into one or more out of 36 categorie so that it could be transferred to the appropriate aid organization.
