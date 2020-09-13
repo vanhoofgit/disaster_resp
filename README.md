@@ -54,4 +54,5 @@ Go to http://0.0.0.0:3001
 </br>  
 
 **5)Results** </br>
+After running the scripts (see above 4)) a webpage is available.
 On the webpage are shown a few charts about the messages genres and categories and you can type in a message. The classifier will attach the message to a message category.
