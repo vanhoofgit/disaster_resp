@@ -1,4 +1,4 @@
-# DesasterResponse
+# Desaster Response
 Classifier for desaster messages. 
 A data science and data visualization via html project based on Figure Eight data.
 
