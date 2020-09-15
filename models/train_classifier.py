@@ -101,7 +101,8 @@ def build_model( X,Y):
     
     ## print out the best score   
     best_score = cv.best_score_
-    print(best_score)  
+    print(best_score)
+
     
     return cv,y_test,predicted
                     
@@ -110,9 +111,9 @@ def build_model( X,Y):
 
 
 
-def evaluate_model(y_test,predicted):
+def evaluate_model(y_test,predicted,category_names):
     '''
-    This function calculates the accuracy, precision, recall
+    This function calculates the accuracy, precision, recall and prints out the classification report
     The input is the true test labels and the predicted labels
     The function doesn't return anything
     
@@ -123,12 +124,14 @@ def evaluate_model(y_test,predicted):
     ac_sc = accuracy_score(y_test, predicted,normalize=True, sample_weight=None)
     print ("Accuracy score :", ac_sc) 
     ## Calculate the precision score
-    pr_sc = precision_score(y_test, predicted,labels=None, average='micro', sample_weight=None, zero_division='warn')
-   
+    pr_sc = precision_score(y_test, predicted,labels=None, average='micro', sample_weight=None, zero_division='warn') 
     print ("Precision score :", pr_sc)
     ## Calculate the recall score
     re_sc = recall_score(y_test, predicted,labels=None, average='micro', sample_weight=None, zero_division='warn')
     print ("Recall score :", re_sc) 
+    ## print out the classification report
+    target_names = category_names
+    print(classification_report(y_test,predicted, target_names=target_names, zero_division=0))
    
 
 
@@ -150,10 +153,10 @@ def main():
        
         
         print('Building model...')
-        model, y_test, predicted = build_model(X,Y)        
+        model, y_test, predicted = build_model(X,Y)       
         
         print('Evaluating model...')  
-        evaluate_model( y_test, predicted)
+        evaluate_model( y_test, predicted, category_names)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
         save_model(model, model_filepath)
